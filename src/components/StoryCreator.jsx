@@ -9,7 +9,7 @@ const StoryCreator = ({ language, onStoryCreated, onBack }) => {
     const [isGenerating, setIsGenerating] = useState(false);
     const [storiesCreated, setStoriesCreated] = useState(0);
 
-    const MAX_STORIES = 7;
+    const MAX_STORIES = 10;
 
     React.useEffect(() => {
         const count = parseInt(localStorage.getItem('storiesCreated') || '0', 10);
@@ -27,7 +27,7 @@ const StoryCreator = ({ language, onStoryCreated, onBack }) => {
             createBtn: "✨ Create Magic Story ✨",
             generating: "Writing your story...",
             back: "← Back",
-            limitReached: "You have reached the daily limit of 7 stories!",
+            limitReached: "You have reached the daily limit of 10 stories!",
             storiesLeft: "stories left today"
         },
         fi: {
@@ -40,7 +40,7 @@ const StoryCreator = ({ language, onStoryCreated, onBack }) => {
             createBtn: "✨ Luo Taikatarina ✨",
             generating: "Kirjoitetaan tarinaa...",
             back: "← Takaisin",
-            limitReached: "Olet saavuttanut 7 tarinan päivittäisen rajan!",
+            limitReached: "Olet saavuttanut 10 tarinan päivittäisen rajan!",
             storiesLeft: "tarinaa jäljellä tänään"
         },
         sv: {
@@ -53,7 +53,7 @@ const StoryCreator = ({ language, onStoryCreated, onBack }) => {
             createBtn: "✨ Skapa Magisk Saga ✨",
             generating: "Skriver din saga...",
             back: "← Tillbaka",
-            limitReached: "Du har nått den dagliga gränsen på 7 sagor!",
+            limitReached: "Du har nått den dagliga gränsen på 10 sagor!",
             storiesLeft: "sagor kvar idag"
         },
         tr: {
@@ -66,7 +66,7 @@ const StoryCreator = ({ language, onStoryCreated, onBack }) => {
             createBtn: "✨ Büyülü Hikaye Yarat ✨",
             generating: "Hikayen yazılıyor...",
             back: "← Geri",
-            limitReached: "Günlük 7 hikaye limitine ulaştın!",
+            limitReached: "Günlük 10 hikaye limitine ulaştın!",
             storiesLeft: "hikaye hakkın kaldı"
         }
     };
