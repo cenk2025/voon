@@ -3,84 +3,89 @@
 
 const translations = {
     en: {
-        intro: (hero, topic) => `Once upon a time, there was a brave hero named ${hero}. Today, ${hero} was going on a special adventure to explore ${topic}.`,
-        middle: (hero, topic, action) => `While exploring ${topic}, ${hero} ${action}. It was so exciting!`,
-        ending: (hero, topic) => `After a long day of fun, ${hero} was tired but happy. "I love ${topic}!" said ${hero}. It was the best adventure ever.`,
-        title: (hero, topic) => `${hero}'s Adventure in ${topic}`,
-        desc: (hero, topic) => `A unique story about ${hero} and ${topic}.`,
+        intro: (hero, topic) => `Meet ${hero}. Today is a special day because ${hero} is going on a journey to ${topic}.`,
+        middle: (hero, topic, action) => `In the world of ${topic}, ${hero} looked around and ${action}. It was amazing!`,
+        ending: (hero, topic) => `What a great adventure in ${topic}! ${hero} felt very happy and sleepy.`,
+        title: (hero, topic) => `${hero} and the ${topic}`,
+        desc: (hero, topic) => `A story about ${hero} journeying to ${topic}.`,
         actions: [
-            "found a mysterious glowing object",
-            "met a friendly creature who wanted to play",
-            "had to solve a tricky puzzle",
-            "climbed a giant mountain to see the view",
-            "discovered a secret hidden path",
-            "helped a lost friend find their way home",
-            "flew high into the sky",
-            "swam deep under the water"
+            "found a shiny treasure chest",
+            "met a new funny friend",
+            "saw a magical rainbow bridge",
+            "climbed a very tall tree",
+            "found a secret door",
+            "helped a little bird",
+            "flew over the clouds",
+            "discovered a hidden cave"
         ]
     },
     fi: {
-        intro: (hero, topic) => `Olipa kerran rohkea sankari nimeltä ${hero}. Tänään ${hero} lähti erityiseen seikkailuun tutkimaan aihetta ${topic}.`,
-        middle: (hero, topic, action) => `Tutkiessaan aihetta ${topic}, ${hero} ${action}. Se oli niin jännittävää!`,
-        ending: (hero, topic) => `Pitkän ja hauskan päivän jälkeen ${hero} oli väsynyt mutta onnellinen. "Rakastan aihetta ${topic}!" sanoi ${hero}. Se oli paras seikkailu ikinä.`,
-        title: (hero, topic) => `Sankarin ${hero} seikkailu: ${topic}`,
-        desc: (hero, topic) => `Ainutlaatuinen tarina sankarista ${hero} ja aiheesta ${topic}.`,
+        intro: (hero, topic) => `Tässä on ${hero}. Tänään on erityinen päivä, sillä ${hero} lähtee matkalle paikkaan: ${topic}.`,
+        middle: (hero, topic, action) => `Paikassa ${topic}, ${hero} katseli ympärilleen ja ${action}. Se oli mahtavaa!`,
+        ending: (hero, topic) => `Mikä seikkailu paikassa ${topic}! ${hero} oli hyvin onnellinen ja väsynyt.`,
+        title: (hero, topic) => `${hero} ja ${topic}`,
+        desc: (hero, topic) => `Tarina sankarista ${hero} ja matkasta paikkaan ${topic}.`,
         actions: [
-            "löysi salaperäisen hehkuvan esineen",
-            "tapasi ystävällisen olennon, joka halusi leikkiä",
-            "joutui ratkaisemaan kinkkisen palapelin",
-            "kiipesi jättimäiselle vuorelle katsomaan maisemia",
-            "löysi salaisen piilotetun polun",
-            "auttoi eksynyttä ystävää löytämään kotiin",
-            "lensi korkealle taivaalle",
-            "ui syvälle veden alle"
+            "löysi kiiltävän aarrearkun",
+            "tapasi uuden hauskan ystävän",
+            "näki taianomaisen sateenkaarisillan",
+            "kiipesi hyvin korkeaan puuhun",
+            "löysi salaisen oven",
+            "auttoi pientä lintua",
+            "lensi pilvien yllä",
+            "löysi piilotetun luolan"
         ]
     },
     sv: {
-        intro: (hero, topic) => `Det var en gång en modig hjälte som hette ${hero}. Idag skulle ${hero} ut på ett speciellt äventyr för att utforska ${topic}.`,
-        middle: (hero, topic, action) => `Medan hen utforskade ${topic}, ${hero} ${action}. Det var så spännande!`,
-        ending: (hero, topic) => `Efter en lång dag av skoj var ${hero} trött men lycklig. "Jag älskar ${topic}!" sa ${hero}. Det var det bästa äventyret någonsin.`,
-        title: (hero, topic) => `${hero}s äventyr i ${topic}`,
-        desc: (hero, topic) => `En unik saga om ${hero} och ${topic}.`,
+        intro: (hero, topic) => `Här är ${hero}. Idag är en speciell dag eftersom ${hero} ska resa till ${topic}.`,
+        middle: (hero, topic, action) => `I ${topic} såg ${hero} sig omkring och ${action}. Det var fantastiskt!`,
+        ending: (hero, topic) => `Vilket äventyr i ${topic}! ${hero} kände sig mycket glad och sömnig.`,
+        title: (hero, topic) => `${hero} och ${topic}`,
+        desc: (hero, topic) => `En berättelse om ${hero} och resan till ${topic}.`,
         actions: [
-            "hittade ett mystiskt lysande föremål",
-            "träffade en vänlig varelse som ville leka",
-            "var tvungen att lösa ett klurigt pussel",
-            "klättrade upp på ett jätteberg för att se utsikten",
-            "upptäckte en hemlig dold stig",
-            "hjälpte en vilsen vän att hitta hem",
-            "flög högt upp i skyn",
-            "simmade djupt under vattnet"
+            "hittade en skinande skattkista",
+            "träffade en ny rolig vän",
+            "såg en magisk regnbågsbro",
+            "klättrade upp i ett mycket högt träd",
+            "hittade en hemlig dörr",
+            "hjälpte en liten fågel",
+            "flög över molnen",
+            "upptäckte en dold grotta"
         ]
     },
     tr: {
-        intro: (hero, topic) => `Bir zamanlar ${hero} adında cesur bir kahraman vardı. Bugün ${hero}, ${topic} dünyasını keşfetmek için özel bir maceraya çıkıyordu.`,
-        middle: (hero, topic, action) => `${topic} dünyasını keşfederken, ${hero} ${action}. Çok heyecan vericiydi!`,
-        ending: (hero, topic) => `Eğlence dolu uzun bir günün ardından ${hero} yorgun ama mutluydu. "Ben ${topic} dünyasını çok seviyorum!" dedi ${hero}. Bu şimdiye kadarki en iyi maceraydı.`,
-        title: (hero, topic) => `${hero}'in ${topic} Macerası`,
-        desc: (hero, topic) => `${hero} ve ${topic} hakkında eşsiz bir hikaye.`,
+        intro: (hero, topic) => `Karşınızda: ${hero}. Bugün çok özel bir gün çünkü ${hero}, ${topic} dünyasına doğru bir yolculuğa çıkıyor.`,
+        middle: (hero, topic, action) => `${topic} diyarında gezinirken, ${hero} ${action}. Bu inanılmazdı!`,
+        ending: (hero, topic) => `${topic} macerası harikaydı! ${hero} çok mutlu ama biraz uykulu hissediyordu.`,
+        title: (hero, topic) => `${hero} ve ${topic} Macerası`,
+        desc: (hero, topic) => `${hero} isimli kahramanın ${topic} yolculuğu.`,
         actions: [
-            "gizemli parlayan bir nesne buldu",
-            "oyun oynamak isteyen dost canlısı bir yaratıkla tanıştı",
-            "zorlu bir bulmacayı çözmek zorunda kaldı",
-            "manzarayı görmek için dev bir dağa tırmandı",
-            "gizli bir patika keşfetti",
-            "kaybolmuş bir arkadaşının evini bulmasına yardım etti",
-            "gökyüzünün yükseklerine uçtu",
-            "suyun derinliklerine yüzdü"
+            "parlayan bir hazine sandığı buldu",
+            "yeni ve komik bir arkadaşla tanıştı",
+            "sihirli bir gökkuşağı köprüsü gördü",
+            "kocaman bir ağaca tırmandı",
+            "gizli bir kapı keşfetti",
+            "küçük bir kuşa yardım etti",
+            "bulutların üzerine uçtu",
+            "gizli bir mağara buldu"
         ]
     }
 };
 
 const getPrompt = (hero, topic, action, type) => {
-    // Prompts should generally be in English for best results with Pollinations/Stable Diffusion
-    // We try to construct a generic prompt even if inputs are non-English
+    // English keywords help the image generator even if the dynamic inputs are non-English
+    const style = "children's book illustration, vibrant colors, vector art style, cute, masterpiece, 8k resolution";
+
+    // We try to provide context. 
+    // If input is non-english, we hope the model picks up proper nouns or common words.
+    // Adding 'character named' and 'theme of' helps structure it.
+
     if (type === 'intro') {
-        return `cute ${hero} standing in front of ${topic}, children's book illustration, vector style, colorful, masterpiece`;
+        return `character named ${hero} standing in the theme of ${topic}, ${style}, welcoming pose`;
     } else if (type === 'middle') {
-        return `${hero} ${action} in ${topic}, children's book illustration, vector style, action scene, vibrant colors`;
+        return `character named ${hero} ${action}, set in the world of ${topic}, ${style}, action shot, magical atmosphere`;
     } else if (type === 'ending') {
-        return `happy ${hero} resting after adventure in ${topic}, sunset, peaceful, children's book illustration, high quality`;
+        return `character named ${hero} sleeping happily, dream like atmosphere, theme of ${topic} in background, ${style}, soft lighting`;
     }
 };
 
@@ -103,15 +108,19 @@ export const generateStory = (topic, hero, length) => {
     pages.push(introPage);
 
     // 2. Middle Pages
-    // We need to pick actions consistently across languages
-    // We'll use the index to pick the corresponding action from each language's list
     const actionCount = translations.en.actions.length;
 
     for (let i = 1; i < safeLength - 1; i++) {
-        const actionIndex = (i - 1) % actionCount;
+        // Randomize actions slightly but consistently
+        const actionIndex = (i - 1 + Math.floor(Math.random() * 3)) % actionCount;
+
+        // Convert the action to english for the prompt if possible? 
+        // We only have the English action string for the prompt
+        const englishAction = translations.en.actions[actionIndex];
+
         const middlePage = {
             text: {},
-            prompt: getPrompt(hero, topic, translations.en.actions[actionIndex], 'middle')
+            prompt: getPrompt(hero, topic, englishAction, 'middle')
         };
 
         langs.forEach(lang => {
@@ -131,14 +140,15 @@ export const generateStory = (topic, hero, length) => {
     pages.push(endingPage);
 
     // Construct the full story object
+    // Note: We use the Intro prompt for the cover
     const story = {
         id: `custom-${Date.now()}`,
         title: {},
         description: {},
-        cover: `https://pollinations.ai/p/${encodeURIComponent(pages[0].prompt)}?width=1024&height=1024&seed=${Math.floor(Math.random() * 1000)}`,
+        cover: `https://pollinations.ai/p/${encodeURIComponent(pages[0].prompt)}?width=1024&height=1024&seed=${Math.floor(Math.random() * 1000)}&nologo=true&model=flux`,
         pages: pages.map(p => ({
             text: p.text,
-            image: `https://pollinations.ai/p/${encodeURIComponent(p.prompt)}?width=1024&height=1024&seed=${Math.floor(Math.random() * 1000)}`
+            image: `https://pollinations.ai/p/${encodeURIComponent(p.prompt)}?width=1024&height=1024&seed=${Math.floor(Math.random() * 1000)}&nologo=true&model=flux`
         }))
     };
 
