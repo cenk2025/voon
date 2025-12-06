@@ -140,14 +140,14 @@ const StoryCreator = ({ language, onStoryCreated, onBack }) => {
                         <input
                             type="range"
                             min="3"
-                            max="10"
+                            max="7"
                             value={length}
                             onChange={(e) => setLength(parseInt(e.target.value))}
                             className="form-range"
                         />
                         <div className="range-labels">
                             <span>3</span>
-                            <span>10</span>
+                            <span>7</span>
                         </div>
                     </div>
 
