@@ -73,25 +73,41 @@ const translations = {
 };
 
 const getPrompt = (hero, topic, action, type) => {
-    // English keywords help the image generator even if the dynamic inputs are non-English
-    const style = "children's book illustration, vibrant colors, vector art style, cute, masterpiece, 8k resolution";
+    // Keywords for consistent style
+    const style = "children's book illustration, vibrant colors, flat vector art style, cute character design, magical atmosphere, masterpiece, 8k resolution, white background";
 
-    // We try to provide context. 
-    // If input is non-english, we hope the model picks up proper nouns or common words.
-    // Adding 'character named' and 'theme of' helps structure it.
+    // Construct prompt based on type
+    let prompt = "";
+
+    // Clean input (remove special chars if any) mostly for safety
+    const cleanHero = hero.replace(/[^\w\s]/gi, '');
+    const cleanTopic = topic.replace(/[^\w\s]/gi, '');
 
     if (type === 'intro') {
-        return `character named ${hero} standing in the theme of ${topic}, ${style}, welcoming pose`;
+        prompt = `cute character named ${cleanHero} standing ready for adventure, background theme is ${cleanTopic}, ${style}, full body shot, happy expression`;
     } else if (type === 'middle') {
-        return `character named ${hero} ${action}, set in the world of ${topic}, ${style}, action shot, magical atmosphere`;
+        prompt = `cute character named ${cleanHero} ${action}, background theme is ${cleanTopic}, ${style}, dynamic pose, exciting scene`;
     } else if (type === 'ending') {
-        return `character named ${hero} sleeping happily, dream like atmosphere, theme of ${topic} in background, ${style}, soft lighting`;
+        prompt = `cute character named ${cleanHero} sleeping peacefully, tired but happy, background theme is ${cleanTopic}, ${style}, soft lighting, night time`;
     }
+
+    // Truncate to avoid too long prompts
+    return prompt.substring(0, 300);
+};
+
+// Shuffle helper
+const shuffleArray = (array) => {
+    const newArray = [...array];
+    for (let i = newArray.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+    }
+    return newArray;
 };
 
 export const generateStory = (topic, hero, length) => {
-    // Clamp length between 3 and 10
-    const safeLength = Math.max(3, Math.min(10, length));
+    // Clamp length between 3 and 7 (enforced by UI mostly, but good to be safe)
+    const safeLength = Math.max(3, Math.min(7, length));
     const langs = ['en', 'fi', 'sv', 'tr'];
 
     // Generate pages structure first
@@ -108,14 +124,19 @@ export const generateStory = (topic, hero, length) => {
     pages.push(introPage);
 
     // 2. Middle Pages
+    // Create a shuffled list of action INDICES to ensure we pick unique actions sequentially
     const actionCount = translations.en.actions.length;
+    const actionIndices = Array.from({ length: actionCount }, (_, i) => i);
+    const shuffledIndices = shuffleArray(actionIndices);
 
-    for (let i = 1; i < safeLength - 1; i++) {
-        // Randomize actions slightly but consistently
-        const actionIndex = (i - 1 + Math.floor(Math.random() * 3)) % actionCount;
+    // Calculate how many middle pages we actually need
+    const middlePageCount = safeLength - 2; // Total - Intro - Ending
 
-        // Convert the action to english for the prompt if possible? 
-        // We only have the English action string for the prompt
+    for (let i = 0; i < middlePageCount; i++) {
+        // Pick an action using the shuffled index
+        // If we somehow ask for more pages than actions, we loop back safely (modulo)
+        const actionIndex = shuffledIndices[i % actionCount];
+
         const englishAction = translations.en.actions[actionIndex];
 
         const middlePage = {
